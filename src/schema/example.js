@@ -1,4 +1,4 @@
-import {makeExecutableSchema} from 'graphql-tools';
+import { makeExecutableSchema } from 'graphql-tools';
 
 const filter = (data, conditions) => {
   const fields = Object.keys(conditions);
@@ -13,7 +13,7 @@ const find = (data, conditions) => {
   return filter(data, conditions)[0];
 };
 
-//example data
+// example data
 const authors = [
   { id: 1, firstName: 'Tom', lastName: 'Coleman' },
   { id: 2, firstName: 'Sashko', lastName: 'Stubailo' },
@@ -44,11 +44,13 @@ const typeDefs = `
     votes: Int
   }
 
+  # the schema allows the following query:
   type Query {
     posts: [Post]
     author(id: Int!): Author
   }
 
+  # this schema allows the following mutation:
   type Mutation {
     upvotePost (
       postId: Int!

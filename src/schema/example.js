@@ -13,7 +13,6 @@ const find = (data, conditions) => {
   return filter(data, conditions)[0];
 };
 
-// example data
 const authors = [
   { id: 1, firstName: 'Tom', lastName: 'Coleman' },
   { id: 2, firstName: 'Sashko', lastName: 'Stubailo' },
